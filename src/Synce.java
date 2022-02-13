@@ -1,15 +1,10 @@
-import java.io.File;
+import java.util.Arrays;
 
 public class Synce {
     public static void main(String[] args) {
 
-        File[] roots = File.listRoots();
+       Roots disks=new Roots();
 
-        System.out.println("Список подключенных дисков: ");
-
-        for (File root: roots) {
-
-            System.out.println(root);
-        }
+       System.out.println(Arrays.toString(disks.activDisks()));
     }
 }
