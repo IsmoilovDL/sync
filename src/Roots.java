@@ -1,10 +1,12 @@
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Roots {
-    private  final String keyfile="synceKey.txt";
+    private static final String keyfile="synceKey.txt";
 
-    public ArrayList<String> activDisks(){
+    //Находить диск с файлом для синхронизации
+    public ArrayList<String> getActiveDisks(){
         ArrayList<String> disklist=new ArrayList<>();
         File[] roots = File.listRoots();
         for (int i=0; i<roots.length; i++){
@@ -14,5 +16,26 @@ public class Roots {
             }
         }
         return disklist;
+    }
+
+    //Список всех дисков
+    public ArrayList<String> getAllDisks(){
+        ArrayList<String> disklist=new ArrayList<>();
+        File[] roots = File.listRoots();
+        for (int i=0; i<roots.length; i++){
+                disklist.add("["+i+"]"+roots[i].toString());
+        }
+        return disklist;
+    }
+
+    //создает файл ключ в выбранном диске
+    public void setActiveDisk(int diskNumber) throws IOException {
+        ArrayList<String> disklist=new ArrayList<>();
+        File[] roots = File.listRoots();
+        for (int i=0; i<roots.length; i++){
+            disklist.add(roots[i].toString());
+        }
+        File newFile=new File(disklist.get(diskNumber)+keyfile);
+        newFile.createNewFile();
     }
 }
