@@ -31,8 +31,10 @@ public class Roots {
 
 
 
-    //создает файл ключ в выбранном диске
-    public void setActiveDisk(int diskNumber) throws IOException {
+    //создает файл ключ в выбранном
+    //получает в параметры номер диска для которого будет создан файл синхронизации
+    //В файле synceKey.txt сохранится путь папки для синхронизации
+    public void setActiveDisk(int diskNumber, String directoriFromSynce) throws IOException {
         ArrayList<String> roots=getAllDisks();
         File newFile=new File(roots.get(diskNumber)+keyfile);
         newFile.createNewFile();

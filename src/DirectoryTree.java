@@ -2,9 +2,9 @@ import java.io.File;
 
 public class DirectoryTree {
 
+    //метод должен взвращат относительный путь всех файлов для сравнение и копирование
     public void DirectoryAndFiles(String path){
         File dir = new File(path);
-       // System.out.println(dir.getName() + (!dir.isDirectory() ? "  -" : ""));
         StringBuilder fileAbsolutPath=new StringBuilder();
         if (dir.isDirectory()) {
             fileAbsolutPath.append("**"+dir.getName());
