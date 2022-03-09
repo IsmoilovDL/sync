@@ -5,6 +5,7 @@ public class Synce {
 
         DirectoryTree directoryTree=new DirectoryTree();
         directoryTree.DirectoryAndFiles("D:\\Zona Downloads");
+        directoryTree.DirectorisAndFiles2("D:\\Zona Downloads");
 
     }
 }
